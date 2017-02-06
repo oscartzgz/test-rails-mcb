@@ -1,0 +1,33 @@
+<%= form_for(has_ocupation) do |f| %>
+  <% if has_ocupation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(has_ocupation.errors.count, "error") %> prohibited this has_ocupation from being saved:</h2>
+
+      <ul>
+      <% has_ocupation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :worker_id %>
+    <%= f.text_field :worker_id %>
+  </div>
+
+  <%#= f.label :ocupation_id %>
+  <%#= f.text_field :ocupation_id %>
+  <div class="field">
+    <% @ocupations.each do |ocupation| %>
+    <%= check_box_tag 'has_ocupation[ocupation_id][]', ocupation.id, checked(ocupation.name), id: 'ocupation_#{ocupation.name}' %>
+    <%= label_tag 'ocupation_#{ocupation.name}', ocupation.name %>
+    <% end %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

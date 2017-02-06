@@ -1,0 +1,1 @@
+json.partial! "has_ocupations/has_ocupation", has_ocupation: @has_ocupation

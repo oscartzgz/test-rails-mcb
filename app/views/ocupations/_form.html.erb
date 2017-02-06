@@ -1,0 +1,22 @@
+<%= form_for(ocupation) do |f| %>
+  <% if ocupation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ocupation.errors.count, "error") %> prohibited this ocupation from being saved:</h2>
+
+      <ul>
+      <% ocupation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

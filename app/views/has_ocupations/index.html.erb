@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Has Ocupations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ocupation</th>
+      <th>Worker</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @has_ocupations.each do |has_ocupation| %>
+      <tr>
+        <td><%= has_ocupation.ocupation %></td>
+        <td><%= has_ocupation.worker %></td>
+        <td><%= link_to 'Show', has_ocupation %></td>
+        <td><%= link_to 'Edit', edit_has_ocupation_path(has_ocupation) %></td>
+        <td><%= link_to 'Destroy', has_ocupation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Has Ocupation', new_has_ocupation_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ocupation:</strong>
+  <%= @has_ocupation.ocupation %>
+</p>
+
+<p>
+  <strong>Worker:</strong>
+  <%= @has_ocupation.worker %>
+</p>
+
+<%= link_to 'Edit', edit_has_ocupation_path(@has_ocupation) %> |
+<%= link_to 'Back', has_ocupations_path %>
